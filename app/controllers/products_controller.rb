@@ -5,6 +5,10 @@ class ProductsController < ApplicationController
   expose(:review) { Review.new }
   expose_decorated(:reviews, ancestor: :product)
 
+  before_action :signed_in?, only: [:create, :update, :destroy]
+
+  before_action :owner?, only: [:update, :edit, :destroy]
+
   def index
   end
 
@@ -46,5 +50,18 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:title, :description, :price, :category_id)
+  end
+
+  def owner?
+    if (current_user != Product.find(params[:id]).user)
+      
+      redirect_to category_product_path, :flash => { :error => 'You are not allowed to edit this product.' }
+    end
+
+  end
+
+  def signed_in?
+    redirect_to new_user_session_path unless user_signed_in?
+
   end
 end
