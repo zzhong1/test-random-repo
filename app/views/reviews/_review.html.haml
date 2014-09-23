@@ -1,4 +1,7 @@
-%p= review.content
+
 %p
+  %b="rating: "
   %b= review.rating
+  %em="Commented by: "
   %em= review.author
+%p.panel.panel-default= review.content
