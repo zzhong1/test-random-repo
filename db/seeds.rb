@@ -28,32 +28,28 @@ Product.create!(title: "Cake",
 				description: "best cake in the world",
 				price: 5.0,
 				category_id: 1,
-				user_id: 2)
+				user_id: 1)
 Product.create!(title: "Egg",
 				description: "best egg in the world",
 				price: 3.0,
 				category_id: 1,
-				user_id: 3)
-Product.create!(title: "Milk",
-				description: "best milk in the world",
-				price: 4.5,
-				category_id: 1,
-				user_id: 3)
+				user_id: 1)
+
 Product.create!(title: "hat",
 				description: "best hat in the world",
 				price: 10.0,
 				category_id: 2,
-				user_id: 4)
+				user_id: 1)
 Product.create!(title: "pants",
 				description: "best pants in the world",
 				price: 20.0,
 				category_id: 2,
-				user_id: 5)
+				user_id: 1)
 Product.create!(title: "sweater",
 				description: "best sweater in the world",
 				price: 15.5,
 				category_id: 2,
-				user_id: 6)
+				user_id: 1)
 Review.create!(content: "it was nice!",
     		   rating:  4,
                product_id: 1,
