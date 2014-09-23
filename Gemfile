@@ -3,6 +3,7 @@ ruby '2.1.2'
 
 gem 'rails', '4.1.5'
 
+gem 'pg'
 gem 'draper'
 gem 'decent_exposure'
 gem 'decent_decoration'
@@ -32,9 +33,4 @@ end
 
 group :test do
   gem 'database_cleaner'
-end
-group :production do
-  gem 'pg',             '0.17.1'
-  gem 'rails_12factor', '0.0.2'
-  gem 'unicorn',        '4.8.3'
 end
